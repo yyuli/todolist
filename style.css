@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    background-image: url("https://img.freepik.com/premium-vector/gradient-pastel-sky-background_23-2148922408.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.container {
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    max-width: 800px;
+    border-top: 10px solid lightpink;
+    border-bottom: 10px solid lightpink;
+    height: 100%;
+}
+
+.task-area {
+    border: 1px solid lightgray;
+    margin-top: 1em;
+    position: relative;
+}
+
+.task-tabs {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+.task-tabs div {
+    padding: 1em;
+}
+
+#under-line {
+    height: 4px;
+    background-color: pink;
+    position: absolute;
+    width:48px;
+    left:0px;
+    top:52px;
+    padding:0px;
+    
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+input {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input:focus {
+    outline:1px solid lightpink;
+}
+
+input::placeholder {
+    font-size: 14px;
+  }
+
+.task-input {
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    width: 80%;
+    border: none;
+    border: 1px solid lightpink;
+}
+
+label {
+    display: inline-block;
+}
+
+.add-button {
+    border: none;
+    background-color: lightpink;
+    box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0;
+    color:white;
+}
+
+.task-input + label > span {
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: #8f8f8f;
+    font-size: 14px;
+    top: 6px;
+    left: 10px;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.input-area {
+    position: relative;
+}
+
+
+
+.task-done {
+    text-decoration: line-through;
+    background-color: lightgray;
+    padding: 1em;
+    width: 100%;
+}
+
+.task-ing {
+    padding:  1em;
+}
+
+.fa-check {
+    color: limegreen;
+    font-size: 18px;
+}
+
+.button-border button {
+    border: none;
+    background-color: white;
+    width: 5em;
+    height: 100%;
+    margin: 0;
+    transition: 0.5s;
+}
+
+.button-border button:first-child:hover {
+    background-color: greenyellow;
+}
+
+.button-border button:nth-child(2):hover {
+    background-color: rgb(255, 0, 0, 0.3);
+  }
+
+.button-border button :active {
+    position: relative;
+    top: 2px;
+  }
+
+.fa-trash {
+    color: red;
+}
+
+.button-border {
+    display: flex;
+}
+
+.fa-undo-alt {
+    color: lightslategray;
+}
+
+.task-tabs div {
+    cursor:pointer;
+}
