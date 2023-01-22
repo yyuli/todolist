@@ -45,15 +45,15 @@ function addTask () {
 function render () {
 
     let list = [];
-    if (mode == "all") {
+    if (mode === "all") {
         list = taskList
-    }else if(mode =="not-done" || mode =="done") {
+    }else if(mode ==="not-done" || mode ==="done") {
         list = filterList
     };
 
     let resultHTML = "";
     for (let i=0; i<list.length; i++) {
-        if(list[i].isComplete == true) {
+        if(list[i].isComplete) {
             resultHTML += `<div class="task">
             <div class="task-done">
                 ${list[i].taskContent}
@@ -94,7 +94,7 @@ function render () {
 
 function toggleComplete (id) {
     for (let i = 0; i < taskList.length; i++) {
-        if(taskList[i].id == id) {
+        if(taskList[i].id === id) {
             taskList[i].isComplete = !taskList[i].isComplete;
             break;
         }
@@ -105,9 +105,8 @@ function toggleComplete (id) {
 
 function deleteTask (id) {
     for (let i = 0; i<taskList.length; i++) {
-        if(taskList[i].id == id) {
+        if(taskList[i].id === id) {
             taskList.splice(i,1)
-            break;
         }
     }
     
@@ -118,7 +117,6 @@ function deleteTask (id) {
 
 function filter(event) {
     mode = event.target.id
-    filterList = [];
 
     document.getElementById("under-line").style.width =
         event.target.offsetWidth + "px";
@@ -127,28 +125,27 @@ function filter(event) {
     document.getElementById("under-line").style.left =
         event.target.offsetLeft + "px";
 
-    if(mode == "all") {
-        render();
-    }else if(mode == "not-done") {
+    // if(mode == "all") {
+    //     render();
+    filterList = [];
+    if(mode === "not-done") {
         for (let i = 0; i<taskList.length; i++) {
-            if(taskList[i].isComplete == false) {
+            if(taskList[i].isComplete === false) {
+                filterList.push(taskList[i]);
+            };
+        };
+    }else if(mode === "done") {
+        for (let i = 0; i<taskList.length; i++) {
+            if(taskList[i].isComplete) {
                 filterList.push(taskList[i]);
             };
         };
         
-        render();
-    }else if(mode =="done") {
-        for (let i = 0; i<taskList.length; i++) {
-            if(taskList[i].isComplete == true) {
-                filterList.push(taskList[i]);
-            };
-        };
-        
-        render();
     }
 
-};
+    render();
 
+};
 
 
 function randomID () {
